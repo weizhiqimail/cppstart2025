@@ -2,8 +2,11 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/docs/位运算示例代码.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/docs/动态数据结构代码示例.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/docs/字符串示例代码.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/docs/数组示例代码.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/01-位运算.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/docs/结构体示例代码.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/docs/静态数据结构代码示例.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main.cpp" charset="GBK" />
   </component>
 </project>
