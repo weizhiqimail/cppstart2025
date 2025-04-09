@@ -1,16 +1,23 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include <stdio.h>
+
+void fun() {
+    int i = 0;
+    i++;
+    printf("fun i = %d\n", i);
+}
+
+void staticFun() {
+    static int i = 0;
+    i++;
+    printf("staticFun i = %d\n", i);
+}
 
 int main() {
-    float a = 100.9f;
-    printf("%f\n", a);
-    // 100.900002
-
-    printf("«Î ‰»Î float: ");
-    // «Î ‰»Î float:98.22
-    scanf("%f", &a);
-    printf("%f\n", a);
-    // 98.220001
+    staticFun();
+    staticFun();
+    staticFun();
+    fun();
+    fun();
+    fun();
     return 0;
 }
