@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
-    <file url="file://$PROJECT_DIR$/CircleModule/Circle.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CircleModule/Circle.h" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CircleModule/Color.h" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CircleModule/Cube.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CircleModule/Cube.h" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CircleModule/Point.h" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/c_codes/位运算示例代码.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/c_codes/动态数据结构示例代码.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/c_codes/字符串示例代码.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/c_codes/数组示例代码.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/c_codes/结构体示例代码.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/c_codes/静态数据结构示例代码.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/cpp_codes/类和对象-03.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/main.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main.cpp" charset="GBK" />
-  </component>
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" />
 </project>
