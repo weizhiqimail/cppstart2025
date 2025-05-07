@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-// struct ½á¹¹Ìå
+// struct ç»“æ„ä½“
 void structWeaponFn() {
   struct Weapon {
     char name[20];
@@ -10,7 +10,7 @@ void structWeaponFn() {
   };
 
   struct Weapon weapon = {"ak47", 100, 200};
-  printf("structWeaponFn ·ÃÎÊµ¥¸ö weapon ½á¹¹ÌåµÄ³ÉÔ±\n");
+  printf("structWeaponFn è®¿é—®å•ä¸ª weapon ç»“æ„ä½“çš„æˆå‘˜\n");
   printf("weapon.name = %s\n", weapon.name);
   printf("weapon.atk = %d\n", weapon.atk);
   printf("weapon.price = %d\n", weapon.price);
@@ -24,7 +24,7 @@ void structWeaponFn() {
       {"AK48", 70, 120}
   };
 
-  printf("structWeaponFn ·ÃÎÊ weapons Êı×é½á¹¹ÌåµÄ³ÉÔ±\n");
+  printf("structWeaponFn è®¿é—® weapons æ•°ç»„ç»“æ„ä½“çš„æˆå‘˜\n");
   for (int i = 0; i < 2; i++) {
     printf("Weapon[%d]: %s, ATK: %d, Price: %d\n",
            i, weapons[i].name, weapons[i].atk, weapons[i].price);
@@ -33,7 +33,7 @@ void structWeaponFn() {
   printf("\n");
 }
 
-// typedef ¶¨Òå½á¹¹ÌåÀàĞÍ
+// typedef å®šä¹‰ç»“æ„ä½“ç±»å‹
 void typedefWeaponFn() {
   typedef struct {
     char name[20];
@@ -42,7 +42,7 @@ void typedefWeaponFn() {
   } Weapon;
 
   Weapon weapon = {"AK47", 100, 200};
-  printf("typedefWeaponFn ·ÃÎÊ weapon ½á¹¹ÌåµÄ³ÉÔ±\n");
+  printf("typedefWeaponFn è®¿é—® weapon ç»“æ„ä½“çš„æˆå‘˜\n");
   printf("weapon.name = %s\n", weapon.name);
   printf("weapon.atk = %d\n", weapon.atk);
   printf("weapon.price = %d\n", weapon.price);
@@ -52,7 +52,7 @@ void typedefWeaponFn() {
   printf("\n");
 }
 
-// Ö¸Õë·ÃÎÊ½á¹¹Ìå
+// æŒ‡é’ˆè®¿é—®ç»“æ„ä½“
 void structWeaponPointerFn() {
   struct weapon {
     char name[20];
@@ -60,16 +60,16 @@ void structWeaponPointerFn() {
     int price;
   };
 
-  printf("structWeaponPointerFn Í¨¹ıÖ¸ÕëÈ¡Öµ\n");
+  printf("structWeaponPointerFn é€šè¿‡æŒ‡é’ˆå–å€¼\n");
 
   struct weapon w1 = {"AK47", 100, 200};
-  printf("w1 µÄµØÖ·: %p\n", (void*)&w1);
+  printf("w1 çš„åœ°å€: %p\n", (void*)&w1);
 
   struct weapon *p = &w1;
-  printf("*p µÄµØÖ·: %p\n", (void*)p);
+  printf("*p çš„åœ°å€: %p\n", (void*)p);
 
-  printf("Í¨¹ıÖ¸ÕëÈ¡Öµ p->name = %s\n", p->name);
-  printf("Í¨¹ıÒıÓÃÈ¡Öµ (*p).name = %s\n", (*p).name);
+  printf("é€šè¿‡æŒ‡é’ˆå–å€¼ p->name = %s\n", p->name);
+  printf("é€šè¿‡å¼•ç”¨å–å€¼ (*p).name = %s\n", (*p).name);
 
   struct weapon arr[2] = {
       {"AK47", 100, 200},
@@ -78,7 +78,7 @@ void structWeaponPointerFn() {
   p = arr;
   printf("Arr[0]: %s\n", p->name);
   p++;
-  printf("ÒÆ¶¯µ½ÏÂÒ»¸ö½á¹¹Ìå p++\n");
+  printf("ç§»åŠ¨åˆ°ä¸‹ä¸€ä¸ªç»“æ„ä½“ p++\n");
   printf("Arr[1]: %s\n", p->name);
 }
 

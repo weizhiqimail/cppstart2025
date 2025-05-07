@@ -2,33 +2,33 @@
 using namespace std;
 
 void myPrint(int a, int b) {
-    cout << "ÆÕÍ¨º¯Êı: a = " << a << ", b = " << b << endl;
+    cout << "æ™®é€šå‡½æ•°: a = " << a << ", b = " << b << endl;
 }
 
 template<typename T>
 void myPrint(T a, T b) {
-    cout << "Ä£°åº¯Êı: a = " << a << ", b = " << b << endl;
+    cout << "æ¨¡æ¿å‡½æ•°: a = " << a << ", b = " << b << endl;
 }
 
 template<typename T>
 void myPrint(T a, T b, T c) {
-    cout << "Ä£°åÖØÔØ: a = " << a << ", b = " << b << ", c = " << c << endl;
+    cout << "æ¨¡æ¿é‡è½½: a = " << a << ", b = " << b << ", c = " << c << endl;
 }
 
 template<typename T>
 void myPrint(T a, double b) {
-    cout << "Ä£°å×î¼ÑÆ¥Åä: a = " << a << ", b = " << b << endl;
+    cout << "æ¨¡æ¿æœ€ä½³åŒ¹é…: a = " << a << ", b = " << b << endl;
 }
 
 void test01() {
     int a = 1, b = 2, c = 3;
-    // ÓÅÏÈÆÕÍ¨º¯Êı
+    // ä¼˜å…ˆæ™®é€šå‡½æ•°
     myPrint(a, b);
-    // Ç¿ÖÆÄ£°å
+    // å¼ºåˆ¶æ¨¡æ¿
     myPrint<>(a, b);
-    // Ä£°åÖØÔØ
+    // æ¨¡æ¿é‡è½½
     myPrint(a, b, c);
-    // ×î¼ÑÆ¥Åä
+    // æœ€ä½³åŒ¹é…
     myPrint(a, 2.5);
 }
 
@@ -36,9 +36,9 @@ int main() {
     test01();
     return 0;
 }
-/* Êä³ö:
-ÆÕÍ¨º¯Êı: a = 1, b = 2
-Ä£°åº¯Êı: a = 1, b = 2
-Ä£°åÖØÔØ: a = 1, b = 2, c = 3
-Ä£°å×î¼ÑÆ¥Åä: a = 1, b = 2.5
+/* è¾“å‡º:
+æ™®é€šå‡½æ•°: a = 1, b = 2
+æ¨¡æ¿å‡½æ•°: a = 1, b = 2
+æ¨¡æ¿é‡è½½: a = 1, b = 2, c = 3
+æ¨¡æ¿æœ€ä½³åŒ¹é…: a = 1, b = 2.5
 */

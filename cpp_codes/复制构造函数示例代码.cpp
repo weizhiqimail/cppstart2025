@@ -38,11 +38,11 @@ private:
 
 public:
     Circle(int r, Point p) : radius(r),point(p) {
-        cout << "Circle ¹¹Ôìº¯Êý£ºint r, Point p" << endl;
+        cout << "Circle æž„é€ å‡½æ•°ï¼šint r, Point p" << endl;
     }
 
     Circle(Circle &circle): radius(circle.radius), point(circle.point) {
-        cout << "Circle ¸´ÖÆ¹¹Ôìº¯Êý" << endl;
+        cout << "Circle å¤åˆ¶æž„é€ å‡½æ•°" << endl;
     }
 
     void setRadius(int r) {
@@ -63,7 +63,7 @@ public:
 
     void calcArea() {
         double area = 3.14 * this->radius * this->radius;
-        cout << "Ô²µÄÃæ»ý: " << area << endl;
+        cout << "åœ†çš„é¢ç§¯: " << area << endl;
     }
 
     Point getPointer() const {
@@ -76,36 +76,36 @@ public:
         if (strlen(prefix.c_str()) > 0) {
             cout << prefix << endl;
         }
-        cout << "Circle ÐÅÏ¢" << endl;
-        cout << "°ë¾¶: " << this->radius << endl;
-        cout << "Ô²ÐÄ×ø±ê: (" << point.getX() << ", " << point.getY() << ")" << endl;
+        cout << "Circle ä¿¡æ¯" << endl;
+        cout << "åŠå¾„: " << this->radius << endl;
+        cout << "åœ†å¿ƒåæ ‡: (" << point.getX() << ", " << point.getY() << ")" << endl;
         cout << endl;
     }
 };
 
 int main() {
-    // ³õÊ¼»¯Ò»¸ö Point ¶ÔÏó
+    // åˆå§‹åŒ–ä¸€ä¸ª Point å¯¹è±¡
     Point point = Point(8, 8);
-    // ³õÊ¼»¯Ò»¸ö Circle ¶ÔÏó
+    // åˆå§‹åŒ–ä¸€ä¸ª Circle å¯¹è±¡
     Circle circle1 = Circle(8, point);
-    circle1.printInfo("circle 1 µÄ»ù±¾ÐÅÏ¢");
+    circle1.printInfo("circle 1 çš„åŸºæœ¬ä¿¡æ¯");
 
-    Circle circle2 = circle1;   // Ê¹ÓÃÄ¬ÈÏµÄ¸´ÖÆ¹¹Ôìº¯Êý£¬½øÐÐÇ³¿½±´
-    circle2.printInfo("circle 2 µÄ»ù±¾ÐÅÏ¢");
+    Circle circle2 = circle1;   // ä½¿ç”¨é»˜è®¤çš„å¤åˆ¶æž„é€ å‡½æ•°ï¼Œè¿›è¡Œæµ…æ‹·è´
+    circle2.printInfo("circle 2 çš„åŸºæœ¬ä¿¡æ¯");
 
     cout << "-------------------------" << endl;
 
-    // ÐÞ¸Ä circle1 µÄÊôÐÔ£¬circle2 µÄÊôÐÔ²»»á·¢Éú±ä»¯
+    // ä¿®æ”¹ circle1 çš„å±žæ€§ï¼Œcircle2 çš„å±žæ€§ä¸ä¼šå‘ç”Ÿå˜åŒ–
     circle1.setRadius(18);
     circle1.setPointer(18, 18);
-    circle1.printInfo("circle1.setRadius(18) ---- circle 1 µÄ»ù±¾ÐÅÏ¢");
-    circle2.printInfo("circle1.setRadius(18) ---- circle 2 µÄ»ù±¾ÐÅÏ¢");
+    circle1.printInfo("circle1.setRadius(18) ---- circle 1 çš„åŸºæœ¬ä¿¡æ¯");
+    circle2.printInfo("circle1.setRadius(18) ---- circle 2 çš„åŸºæœ¬ä¿¡æ¯");
 
-    // ÐÞ¸Ä circle2 µÄÊôÐÔ£¬circle1 µÄÊôÐÔÒ²²»»á·¢Éú±ä»¯
+    // ä¿®æ”¹ circle2 çš„å±žæ€§ï¼Œcircle1 çš„å±žæ€§ä¹Ÿä¸ä¼šå‘ç”Ÿå˜åŒ–
     circle2.setRadius(28);
     circle2.setPointer(28, 28);
-    circle1.printInfo("circle2.setRadius(28) ---- circle 1 µÄ»ù±¾ÐÅÏ¢");
-    circle2.printInfo("circle2.setRadius(28) ---- circle 2 µÄ»ù±¾ÐÅÏ¢");
+    circle1.printInfo("circle2.setRadius(28) ---- circle 1 çš„åŸºæœ¬ä¿¡æ¯");
+    circle2.printInfo("circle2.setRadius(28) ---- circle 2 çš„åŸºæœ¬ä¿¡æ¯");
 
     return 0;
 };

@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <string.h>
 
-// ½«ÕûÊý¸ñÊ½»¯Îª´ø¿Õ¸ñµÄ32Î»¶þ½øÖÆ×Ö·û´®
+// å°†æ•´æ•°æ ¼å¼åŒ–ä¸ºå¸¦ç©ºæ ¼çš„32ä½äºŒè¿›åˆ¶å­—ç¬¦ä¸²
 void formatBitset(uint32_t num, char *output) {
   for (int i = 31; i >= 0; --i) {
     output[31 - i + (31 - i) / 4] = (num & (1U << i)) ? '1' : '0';
@@ -10,11 +10,11 @@ void formatBitset(uint32_t num, char *output) {
       output[31 - i + (31 - i) / 4 + 1] = ' ';
     }
   }
-  output[39] = '\0'; // °üÀ¨¿Õ¸ñ£¬Ò»¹²ÊÇ 39 ¸ö×Ö·û
+  output[39] = '\0'; // åŒ…æ‹¬ç©ºæ ¼ï¼Œä¸€å…±æ˜¯ 39 ä¸ªå­—ç¬¦
 }
 
 void printArray(const char *arrName, int *arr, size_t size, int showAddress) {
-  printf("===== Ò»Î¬Êý×éÔªËØ (%s) Êä³ö =====\n", arrName);
+  printf("===== ä¸€ç»´æ•°ç»„å…ƒç´  (%s) è¾“å‡º =====\n", arrName);
   for (size_t i = 0; i < size; i++) {
     printf("%s[%zu] = %d", arrName, i, arr[i]);
     if (showAddress) {
@@ -29,7 +29,7 @@ void printArray(const char *arrName, int *arr, size_t size, int showAddress) {
 }
 
 void print2DArray(const char *arrName, int arr[][4], size_t rows, size_t cols, int showAddress) {
-  printf("===== ¶þÎ¬Êý×éÔªËØ (%s) Êä³ö =====\n", arrName);
+  printf("===== äºŒç»´æ•°ç»„å…ƒç´  (%s) è¾“å‡º =====\n", arrName);
   for (size_t i = 0; i < rows; i++) {
     for (size_t j = 0; j < cols; j++) {
       printf("%s[%zu][%zu] = %d", arrName, i, j, arr[i][j]);
@@ -51,7 +51,7 @@ void printText(const char *text) {
 
 int main() {
   int c[10] = {1};
-  printText("³õÊ¼»¯Ò»Î¬Êý×é c[10]£¬ËùÓÐÔªËØÎª 0£»Ö»Ö¸¶¨µÚÒ»¸öÔªËØÎª 1£¬ÆäÓàÔªËØ×Ô¶¯Ìî³äÎª 0");
+  printText("åˆå§‹åŒ–ä¸€ç»´æ•°ç»„ c[10]ï¼Œæ‰€æœ‰å…ƒç´ ä¸º 0ï¼›åªæŒ‡å®šç¬¬ä¸€ä¸ªå…ƒç´ ä¸º 1ï¼Œå…¶ä½™å…ƒç´ è‡ªåŠ¨å¡«å……ä¸º 0");
   printArray("c", c, 10, 1);
   printf("c: %p\n", (void*)c);
   printf("&c: %p\n", (void*)&c);
@@ -61,26 +61,26 @@ int main() {
       {0, 0, 0, 0},
       {0, 0, 0, 0},
   };
-  printText("³õÊ¼»¯¶þÎ¬Êý×é c1[3][4]£¬ËùÓÐÔªËØÎª 0£»Ê¹ÓÃÇ¶Ì×³õÊ¼»¯ÁÐ±íÏÔÊ½Ö¸¶¨Ã¿¸öÔªËØ");
+  printText("åˆå§‹åŒ–äºŒç»´æ•°ç»„ c1[3][4]ï¼Œæ‰€æœ‰å…ƒç´ ä¸º 0ï¼›ä½¿ç”¨åµŒå¥—åˆå§‹åŒ–åˆ—è¡¨æ˜¾å¼æŒ‡å®šæ¯ä¸ªå…ƒç´ ");
   print2DArray("c1", c1, 3, 4, 1);
 
   int c2[3][4] = {1, 2, 3, 4};
-  printText("³õÊ¼»¯¶þÎ¬Êý×é c2[3][4]£¬½öÌá¹©²¿·ÖÔªËØ£»{1, 2, 3, 4} »á°´ÐÐÌî³ä c2[0][0] µ½ c2[0][3]£¬ÆäÓàÔªËØ×Ô¶¯Îª 0");
+  printText("åˆå§‹åŒ–äºŒç»´æ•°ç»„ c2[3][4]ï¼Œä»…æä¾›éƒ¨åˆ†å…ƒç´ ï¼›{1, 2, 3, 4} ä¼šæŒ‰è¡Œå¡«å…… c2[0][0] åˆ° c2[0][3]ï¼Œå…¶ä½™å…ƒç´ è‡ªåŠ¨ä¸º 0");
   print2DArray("c2", c2, 3, 4, 1);
 
   int a[] = {1,2,3,4,5,6,7,8,9,10};
-  printText("³õÊ¼»¯Ò»Î¬Êý×é a[]£¬±àÒëÆ÷¸ù¾Ý³õÊ¼»¯ÁÐ±íÍÆ¶Ï´óÐ¡Îª 10");
+  printText("åˆå§‹åŒ–ä¸€ç»´æ•°ç»„ a[]ï¼Œç¼–è¯‘å™¨æ ¹æ®åˆå§‹åŒ–åˆ—è¡¨æŽ¨æ–­å¤§å°ä¸º 10");
   printf("%p\n", (void*)&a);
 
   int b[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
-  printf("%lu\n", sizeof(b)); // ×Ö½ÚÊý
+  printf("%lu\n", sizeof(b)); // å­—èŠ‚æ•°
 
   char c_array[] = {'a','b','c','d','e'};
-  printf("%lu\n", sizeof(c_array)); // 5 ×Ö½Ú
+  printf("%lu\n", sizeof(c_array)); // 5 å­—èŠ‚
 
   int d[10];
   for (int i = 0; i < 10; i++) {
-    printf("d[%d] = %d\n", i, d[i]); // Î´³õÊ¼»¯£¬Öµ²»È·¶¨
+    printf("d[%d] = %d\n", i, d[i]); // æœªåˆå§‹åŒ–ï¼Œå€¼ä¸ç¡®å®š
   }
 
   printf("d = %p\n", (void *)d);

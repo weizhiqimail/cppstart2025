@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-// Êä³ö32Î»¶ş½øÖÆ£¬´øÃ¿4Î»·Ö¸ô
+// è¾“å‡º32ä½äºŒè¿›åˆ¶ï¼Œå¸¦æ¯4ä½åˆ†éš”
 void print_binary_32(uint32_t val) {
   for (int i = 31; i >= 0; i--) {
     printf("%d", (val >> i) & 1);
@@ -9,7 +9,7 @@ void print_binary_32(uint32_t val) {
   }
 }
 
-// Êä³ö16Î»¶ş½øÖÆ£¬´øÃ¿4Î»·Ö¸ô
+// è¾“å‡º16ä½äºŒè¿›åˆ¶ï¼Œå¸¦æ¯4ä½åˆ†éš”
 void print_binary_16(uint16_t val) {
   for (int i = 15; i >= 0; i--) {
     printf("%d", (val >> i) & 1);
@@ -17,9 +17,9 @@ void print_binary_16(uint16_t val) {
   }
 }
 
-// °´Î»Óë²Ù×÷
+// æŒ‰ä½ä¸æ“ä½œ
 void bitwise_and_fn() {
-  printf("====== °´Î»Óë²Ù×÷ ======\n");
+  printf("====== æŒ‰ä½ä¸æ“ä½œ ======\n");
 
   uint32_t a = 0x12345678;
   uint32_t maskInt = 0xFFFFFF00;
@@ -29,22 +29,22 @@ void bitwise_and_fn() {
   uint16_t maskShort = 0xFF00;
   uint16_t resultShort = s & maskShort;
 
-  // int ÀàĞÍ
-  printf("===== int ÀàĞÍÓëÔËËã =====\n");
-  printf("Ô­Ê¼ a        = 0x%08X (", a); print_binary_32(a); printf(")\n");
-  printf("ÑÚÂë maskInt  = 0x%08X (", maskInt); print_binary_32(maskInt); printf(")\n");
-  printf("½á¹û result   = 0x%08X (", resultInt); print_binary_32(resultInt); printf(")\n");
+  // int ç±»å‹
+  printf("===== int ç±»å‹ä¸è¿ç®— =====\n");
+  printf("åŸå§‹ a        = 0x%08X (", a); print_binary_32(a); printf(")\n");
+  printf("æ©ç  maskInt  = 0x%08X (", maskInt); print_binary_32(maskInt); printf(")\n");
+  printf("ç»“æœ result   = 0x%08X (", resultInt); print_binary_32(resultInt); printf(")\n");
 
-  // short ÀàĞÍ
-  printf("\n===== short ÀàĞÍÓëÔËËã =====\n");
-  printf("Ô­Ê¼ s        = 0x%04X (", s); print_binary_16(s); printf(")\n");
-  printf("ÑÚÂë maskShort= 0x%04X (", maskShort); print_binary_16(maskShort); printf(")\n");
-  printf("½á¹û result   = 0x%04X (", resultShort); print_binary_16(resultShort); printf(")\n");
+  // short ç±»å‹
+  printf("\n===== short ç±»å‹ä¸è¿ç®— =====\n");
+  printf("åŸå§‹ s        = 0x%04X (", s); print_binary_16(s); printf(")\n");
+  printf("æ©ç  maskShort= 0x%04X (", maskShort); print_binary_16(maskShort); printf(")\n");
+  printf("ç»“æœ result   = 0x%04X (", resultShort); print_binary_16(resultShort); printf(")\n");
 }
 
-// °´Î»»ò²Ù×÷
+// æŒ‰ä½æˆ–æ“ä½œ
 void bitwise_or_fn() {
-  printf("\n====== °´Î»»ò²Ù×÷ (|) ======\n");
+  printf("\n====== æŒ‰ä½æˆ–æ“ä½œ (|) ======\n");
   uint32_t a = 0x0F0F0F0F;
   uint32_t b = 0x33333333;
   uint32_t result = a | b;
@@ -54,9 +54,9 @@ void bitwise_or_fn() {
   printf("a | b    = 0x%08X (", result); print_binary_32(result); printf(")\n");
 }
 
-// °´Î»Òì»ò²Ù×÷
+// æŒ‰ä½å¼‚æˆ–æ“ä½œ
 void bitwise_xor_fn() {
-  printf("\n====== °´Î»Òì»ò²Ù×÷ (^) ======\n");
+  printf("\n====== æŒ‰ä½å¼‚æˆ–æ“ä½œ (^) ======\n");
   uint32_t a = 0xAAAA5555;
   uint32_t b = 0xFFFF0000;
   uint32_t result = a ^ b;
@@ -66,9 +66,9 @@ void bitwise_xor_fn() {
   printf("a ^ b    = 0x%08X (", result); print_binary_32(result); printf(")\n");
 }
 
-// °´Î»È¡·´²Ù×÷
+// æŒ‰ä½å–åæ“ä½œ
 void bitwise_not_fn() {
-  printf("\n====== °´Î»È¡·´²Ù×÷ (~) ======\n");
+  printf("\n====== æŒ‰ä½å–åæ“ä½œ (~) ======\n");
   uint32_t a = 0x0F0F0F0F;
   uint32_t result = ~a;
 
@@ -76,9 +76,9 @@ void bitwise_not_fn() {
   printf("~a       = 0x%08X (", result); print_binary_32(result); printf(")\n");
 }
 
-// ×óÒÆ²Ù×÷
+// å·¦ç§»æ“ä½œ
 void left_shift_fn() {
-  printf("\n====== ×óÒÆ²Ù×÷ (<<) ======\n");
+  printf("\n====== å·¦ç§»æ“ä½œ (<<) ======\n");
   uint32_t a = 0x0000000F;
   int shift = 4;
   uint32_t result = a << shift;
@@ -86,17 +86,17 @@ void left_shift_fn() {
   printf("a        = 0x%08X (", a); print_binary_32(a); printf(")\n");
   printf("a << %d   = 0x%08X (", shift, result); print_binary_32(result); printf(")\n");
 
-  printf("\n====== ×óÒÆ²Ù×÷£¬ÒÆÎ» 35 Î»£¨³¬·¶Î§£©======\n");
+  printf("\n====== å·¦ç§»æ“ä½œï¼Œç§»ä½ 35 ä½ï¼ˆè¶…èŒƒå›´ï¼‰======\n");
   int shift_large = 35;
-  result = a << (shift_large % 32);  // ±ÜÃâÎ´¶¨ÒåĞĞÎª
+  result = a << (shift_large % 32);  // é¿å…æœªå®šä¹‰è¡Œä¸º
 
   printf("a        = 0x%08X (", a); print_binary_32(a); printf(")\n");
   printf("a << %d  = 0x%08X (", shift_large, result); print_binary_32(result); printf(")\n");
 }
 
-// ÓÒÒÆ²Ù×÷
+// å³ç§»æ“ä½œ
 void right_shift_fn() {
-  printf("\n====== ÓÒÒÆ²Ù×÷ (>>) ======\n");
+  printf("\n====== å³ç§»æ“ä½œ (>>) ======\n");
   int32_t a = 0xF0000000;
   int shift = 4;
   int32_t result = a >> shift;
@@ -104,7 +104,7 @@ void right_shift_fn() {
   printf("a        = 0x%08X (", a); print_binary_32((uint32_t)a); printf(")\n");
   printf("a >> %d  = 0x%08X (", shift, (uint32_t)result); print_binary_32((uint32_t)result); printf(")\n");
 
-  printf("\n====== ÓÒÒÆ²Ù×÷£¬ÒÆÎ» 35 Î»£¨³¬·¶Î§£©======\n");
+  printf("\n====== å³ç§»æ“ä½œï¼Œç§»ä½ 35 ä½ï¼ˆè¶…èŒƒå›´ï¼‰======\n");
   int shift_large = 35;
   result = a >> (shift_large % 32);
 

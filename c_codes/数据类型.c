@@ -1,61 +1,62 @@
 #include <stdio.h>
 #include <limits.h>
 #include <stdbool.h>
+#include <assert.h>
 
 /**
-%d£¬Êä³öÒ»¸öÓÐ·ûºÅµÄ 10 ½øÖÆ int ÐÍ
-%o£¬Êä³öÒ»¸ö 10 ½øÖÆ int ÐÍ
-%x£¬Êä³öÒ»¸ö 16 ½øÖÆ int ÐÍ£¬×ÖÄ¸Ð¡Ð´
-%X£¬Êä³öÒ»¸ö 16 ½øÖÆ int ÐÍ£¬×ÖÄ¸´óÐ´
-%u£¬Êä³öÒ»¸ö 10 ½øÖÆµÄÎÞ·ûºÅÊý
-%hd£¬Êä³ö short ÀàÐÍ
-%d£¬Êä³ö int ÀàÐÍ
-%l£¬Êä³ö long ÀàÐÍ
-%ll£¬Êä³ö long long ÀàÐÍ
-%hu£¬Êä³ö unsigned short ÀàÐÍ
-%u£¬Êä³ö unsigned int ÀàÐÍ
-%lu£¬Êä³ö unsigned long ÀàÐÍ
-%llu£¬Êä³ö unsigned long long ÀàÐÍ
+%dï¼Œè¾“å‡ºä¸€ä¸ªæœ‰ç¬¦å·çš„ 10 è¿›åˆ¶ int åž‹
+%oï¼Œè¾“å‡ºä¸€ä¸ª 10 è¿›åˆ¶ int åž‹
+%xï¼Œè¾“å‡ºä¸€ä¸ª 16 è¿›åˆ¶ int åž‹ï¼Œå­—æ¯å°å†™
+%Xï¼Œè¾“å‡ºä¸€ä¸ª 16 è¿›åˆ¶ int åž‹ï¼Œå­—æ¯å¤§å†™
+%uï¼Œè¾“å‡ºä¸€ä¸ª 10 è¿›åˆ¶çš„æ— ç¬¦å·æ•°
+%hdï¼Œè¾“å‡º short ç±»åž‹
+%dï¼Œè¾“å‡º int ç±»åž‹
+%lï¼Œè¾“å‡º long ç±»åž‹
+%llï¼Œè¾“å‡º long long ç±»åž‹
+%huï¼Œè¾“å‡º unsigned short ç±»åž‹
+%uï¼Œè¾“å‡º unsigned int ç±»åž‹
+%luï¼Œè¾“å‡º unsigned long ç±»åž‹
+%lluï¼Œè¾“å‡º unsigned long long ç±»åž‹
  */
 void intDataTypeFn() {
 
-  // Êä³ö int µÄÊý¾Ý·¶Î§
+  // è¾“å‡º int çš„æ•°æ®èŒƒå›´
   printf("sizeof(int): %llu\n", sizeof(int));
-  // Êä³ö INT_MAX, INT_MIN µÄÖµ
+  // è¾“å‡º INT_MAX, INT_MIN çš„å€¼
   printf("INT_MAX: %d, (2^31)-1\n", INT_MAX);
   printf("INT_MIN: %d, -(2^31)\n", INT_MIN);
-  // Êä³ö unsigned int µÄ×î´óÖµ
+  // è¾“å‡º unsigned int çš„æœ€å¤§å€¼
   printf("UINT_MAX: %u, (2^32)-1\n", UINT_MAX);
   printf("\n");
 
-  // Êä³ö short int µÄÊý¾Ý·¶Î§
+  // è¾“å‡º short int çš„æ•°æ®èŒƒå›´
   printf("sizeof(short int): %llu\n", sizeof(short int));
-  // Êä³ö SHRT_MAX, SHRT_MIN µÄÖµ
+  // è¾“å‡º SHRT_MAX, SHRT_MIN çš„å€¼
   printf("SHRT_MAX: %d, (2^15)-1\n", SHRT_MAX);
   printf("SHRT_MIN: %d, -(2^15)\n", SHRT_MIN);
-  // Êä³ö unsigned short int µÄ×î´óÖµ
+  // è¾“å‡º unsigned short int çš„æœ€å¤§å€¼
   printf("USHRT_MAX: %u, (2^16)-1\n", USHRT_MAX);
   printf("\n");
 
-  // Êä³ö long int µÄÊý¾Ý·¶Î§
+  // è¾“å‡º long int çš„æ•°æ®èŒƒå›´
   printf("sizeof(long int): %llu\n", sizeof(long int));
-  // Êä³ö LONG_MAX, LONG_MIN µÄÖµ
+  // è¾“å‡º LONG_MAX, LONG_MIN çš„å€¼
   printf("LONG_MAX: %ld, (2^31)-1\n", LONG_MAX);
   printf("LONG_MIN: %ld, -(2^31)\n", LONG_MIN);
-  // Êä³ö unsigned long int µÄ×î´óÖµ
+  // è¾“å‡º unsigned long int çš„æœ€å¤§å€¼
   printf("ULONG_MAX: %lu, (2^32)-1\n", ULONG_MAX);
   printf("\n");
 
-  // Êä³ö long long int µÄÊý¾Ý·¶Î§
+  // è¾“å‡º long long int çš„æ•°æ®èŒƒå›´
   printf("sizeof(long long int): %llu\n", sizeof(long long int));
-  // Êä³ö LLONG_MAX, LLONG_MIN µÄÖµ
+  // è¾“å‡º LLONG_MAX, LLONG_MIN çš„å€¼
   printf("LLONG_MAX: %lld, (2^63)-1\n", LLONG_MAX);
   printf("LLONG_MIN: %lld, -(2^63)\n", LLONG_MIN);
-  // Êä³ö unsigned long long int µÄ×î´óÖµ
+  // è¾“å‡º unsigned long long int çš„æœ€å¤§å€¼
   printf("ULLONG_MAX: %llu, (2^64)-1\n", ULLONG_MAX);
   printf("\n");
 
-  // size_t ÊÇÎÞ·ûºÅÕûÊýÀàÐÍ£¬Í¨³£ÓÃÓÚ±íÊ¾¶ÔÏóµÄ´óÐ¡
+  // size_t æ˜¯æ— ç¬¦å·æ•´æ•°ç±»åž‹ï¼Œé€šå¸¸ç”¨äºŽè¡¨ç¤ºå¯¹è±¡çš„å¤§å°
   // long long unsigned int
   size_t size_of_int = sizeof(int);
   printf("sizeof(size_t): %llu\n", sizeof(size_of_int));
@@ -63,17 +64,17 @@ void intDataTypeFn() {
 }
 
 void floatDataTypeFn() {
-  // float ÓÐ 6 Î»ÓÐÐ§Êý×Ö
+  // float æœ‰ 6 ä½æœ‰æ•ˆæ•°å­—
   float a_float = 1234567.1234567f;
   printf("a_float: %f\n", a_float);
   printf("sizeof(float): %llu\n", sizeof(float));
 
-  // double ÓÐ 15 Î»ÓÐÐ§Êý×Ö
+  // double æœ‰ 15 ä½æœ‰æ•ˆæ•°å­—
   double a_double = 1234567.1234567;
   printf("a_double: %.15lf\n", a_double);
   printf("sizeof(double): %llu\n", sizeof(double));
 
-  // ¸¡µãÊý¾«¶ÈµÄÎÊÌâ
+  // æµ®ç‚¹æ•°ç²¾åº¦çš„é—®é¢˜
   float f1 = 39.1234567f;
   printf("f1: %f\n", f1);
   float f2 = 39.1234567f;
@@ -85,7 +86,7 @@ void floatDataTypeFn() {
   printf("%f - 39.1234 = %f\n", f1, f1 - 39.1234);
   printf("%f - 39.123 = %f\n", f1, f1 - 39.123);
 
-  // ÓÉÓÚ 39.1234567890 ²»ÄÜÍêÃÀ×ªÎª¶þ½øÖÆ£¬ËùÒÔ»áÓÐ¶ªÊ§¾«¶È¡£
+  // ç”±äºŽ 39.1234567890 ä¸èƒ½å®Œç¾Žè½¬ä¸ºäºŒè¿›åˆ¶ï¼Œæ‰€ä»¥ä¼šæœ‰ä¸¢å¤±ç²¾åº¦ã€‚
   double d1 = 39.1234567890;
   printf("d1: %.15lf\n", d1);
   double d2 = 39.1234567890;
@@ -113,25 +114,25 @@ void floatDataTypeFn() {
 }
 
 
-// ´óÐ¡Ð´×ÖÄ¸×ª»»µÄ±¾ÖÊÔÚÓÚ£ºÁ½¸ö×ÖÄ¸£¬ÎÞÂÛÊÇ´óÐ´»¹ÊÇÐ¡Ð´£¬ÔÚ ASCII ÀïµÄ¾àÀë£¨»òÕßËµÁ½¸ö×ÖÄ¸µÄ ASCII µÄ²îÖµ£©ÊÇÒ»ÑùµÄ¡£
-// ´óÐ´×ÖÄ¸ A-Z Çø¼äÎª 65-90
-// Ð¡Ð´×ÖÄ¸ a-z Çø¼äÎª 97-122
+// å¤§å°å†™å­—æ¯è½¬æ¢çš„æœ¬è´¨åœ¨äºŽï¼šä¸¤ä¸ªå­—æ¯ï¼Œæ— è®ºæ˜¯å¤§å†™è¿˜æ˜¯å°å†™ï¼Œåœ¨ ASCII é‡Œçš„è·ç¦»ï¼ˆæˆ–è€…è¯´ä¸¤ä¸ªå­—æ¯çš„ ASCII çš„å·®å€¼ï¼‰æ˜¯ä¸€æ ·çš„ã€‚
+// å¤§å†™å­—æ¯ A-Z åŒºé—´ä¸º 65-90
+// å°å†™å­—æ¯ a-z åŒºé—´ä¸º 97-122
 
-// ×Ö·û×ªÎª´óÐ´
+// å­—ç¬¦è½¬ä¸ºå¤§å†™
 char to_upper(char c) {
-  // ÅÐ¶Ï×ÖÄ¸ÊÇ·ñÔÚÐ¡Ð´×ÖÄ¸Çø¼äÄÚ
+  // åˆ¤æ–­å­—æ¯æ˜¯å¦åœ¨å°å†™å­—æ¯åŒºé—´å†…
   if (c >= 'a' && c <= 'z') {
-    // c - 'a' µÃµ½Ð¡Ð´×ÖÄ¸´Ó 'a' ¿ªÊ¼µÄÆ«ÒÆÁ¿¡£
-    // ¼ÙÉè c ÊÇ×ÖÄ¸ 'd'£¬×ÖÄ¸ 'd' µÄ ASCII ÂëÊÇ 100
-    // 'd' - 'a' = 100 - 97 = 3£¬¼´ 'd' ÔÚÐ¡Ð´×ÖÄ¸Çø¼äµÄÆ«ÒÆÁ¿ÊÇ 3
-    // Ò²¾ÍÊÇËµ 'D' ¾àÀë 'A' µÄ¾àÀëÒ²ÊÇ 3¡£
-    // + 'A' ±íÊ¾´Ó 'A' ¿ªÊ¼£¬²¹ÆëÆ«ÒÆÁ¿ 3£¬¾Í¿ÉÒÔµÃµ½ 'D'¡£
+    // c - 'a' å¾—åˆ°å°å†™å­—æ¯ä»Ž 'a' å¼€å§‹çš„åç§»é‡ã€‚
+    // å‡è®¾ c æ˜¯å­—æ¯ 'd'ï¼Œå­—æ¯ 'd' çš„ ASCII ç æ˜¯ 100
+    // 'd' - 'a' = 100 - 97 = 3ï¼Œå³ 'd' åœ¨å°å†™å­—æ¯åŒºé—´çš„åç§»é‡æ˜¯ 3
+    // ä¹Ÿå°±æ˜¯è¯´ 'D' è·ç¦» 'A' çš„è·ç¦»ä¹Ÿæ˜¯ 3ã€‚
+    // + 'A' è¡¨ç¤ºä»Ž 'A' å¼€å§‹ï¼Œè¡¥é½åç§»é‡ 3ï¼Œå°±å¯ä»¥å¾—åˆ° 'D'ã€‚
     return c - 'a' + 'A';
   }
   return c;
 }
 
-// ×Ö·û×ªÎªÐ¡Ð´
+// å­—ç¬¦è½¬ä¸ºå°å†™
 char to_lower(char c) {
   if (c >= 'A' && c <= 'Z') {
     return c + 'a' - 'A';
@@ -140,12 +141,12 @@ char to_lower(char c) {
 }
 
 void charDataTypeFn() {
-  // ¶¨ÒåÒ»¸ö×Ö·û a
+  // å®šä¹‰ä¸€ä¸ªå­—ç¬¦ a
   char a_char = 'a';
   printf("a_char: %c\n", a_char);
-  // ½« ×Ö·û a ×ª»»Îª int ÀàÐÍ
-  // µÃµ½Ò»¸ö int ÀàÐÍ£¬ÖµÎª ×Ö·û a µÄ ASCII Âë
-  // ×Ö·û a µÄ ASCII µÄÖµÊÇ 97£¬ËùÒÔ a_int ÊÇ 97
+  // å°† å­—ç¬¦ a è½¬æ¢ä¸º int ç±»åž‹
+  // å¾—åˆ°ä¸€ä¸ª int ç±»åž‹ï¼Œå€¼ä¸º å­—ç¬¦ a çš„ ASCII ç 
+  // å­—ç¬¦ a çš„ ASCII çš„å€¼æ˜¯ 97ï¼Œæ‰€ä»¥ a_int æ˜¯ 97
   int a_int = (int) a_char;
   printf("a_int: %d\n", a_int);
 
@@ -154,35 +155,64 @@ void charDataTypeFn() {
   int A_int = (int) A_char;
   printf("A_int: %d\n", A_int);
 
-  // ×Ö·û '0' µÄ ASCII ÂëÊÇ 48
+  // å­—ç¬¦ '0' çš„ ASCII ç æ˜¯ 48
   char char_0 = '0';
   printf("char_0: %c\n", char_0);
   int char_0_int = (int) char_0;
   printf("char_0_int: %d\n", char_0_int);
 
-//   ¿í×Ö·û£¬C95 Ö§³Ö
-//  wchar_t bian = L'±à';
+//   å®½å­—ç¬¦ï¼ŒC95 æ”¯æŒ
+//  wchar_t bian = L'ç¼–';
 //  printf("bian: %lc\n", bian);
 //
-//  wchar_t cheng = L'³Ì';
+//  wchar_t cheng = L'ç¨‹';
 //  printf("cheng: %lc\n", cheng);
 
 }
 
 void constantTypeFn() {
-  // ³£Á¿£¬Ò²¿ÉÒÔËµÊÇÖ»¶Á±äÁ¿¡£Èç¹ûÓÐµØÖ·£¬Ò²¿ÉÒÔÐÞ¸ÄÖµ¡£
+  // å¸¸é‡ï¼Œä¹Ÿå¯ä»¥è¯´æ˜¯åªè¯»å˜é‡ã€‚å¦‚æžœæœ‰åœ°å€ï¼Œä¹Ÿå¯ä»¥ä¿®æ”¹å€¼ã€‚
   const int a = 10;
   printf("a: %d\n", a);
 
-  // ÕâÑù×ö²»°²È«£¬ÒòÎª¿ÉÒÔÐÞ¸ÄÖ¸ÕëÖ¸ÏòµÄÖµ¡£¡¾²»ÒªÕâÑùÓÃ¡¿
+  // è¿™æ ·åšä¸å®‰å…¨ï¼Œå› ä¸ºå¯ä»¥ä¿®æ”¹æŒ‡é’ˆæŒ‡å‘çš„å€¼ã€‚ã€ä¸è¦è¿™æ ·ç”¨ã€‘
 //  int *p = &a;
-  // ËùÒÔ£¬ÒªÈ·±£°²È«£¬Ó¦¸ÃÊ¹ÓÃ¡¾ÒªÕâÑùÓÃ¡¿
+  // æ‰€ä»¥ï¼Œè¦ç¡®ä¿å®‰å…¨ï¼Œåº”è¯¥ä½¿ç”¨ã€è¦è¿™æ ·ç”¨ã€‘
   const int *p = &a;
 
   printf("p: %p\n", p);
-  // Í¨¹ýÖ¸Õë p ÐÞ¸ÄÁË a µÄÖµ¡£
+  // é€šè¿‡æŒ‡é’ˆ p ä¿®æ”¹äº† a çš„å€¼ã€‚
 //  *p = 20;
   printf("a: %d\n", a);
+}
+
+typedef struct {
+  char name[20];
+  int age;
+  union {
+    char phone[20];
+    char email[30];
+  };
+} User;
+
+inline static const char *findAddr(const User *user) {
+  assert(user != NULL);
+  return user->phone[0] != '\0' ? user->phone : user->email;
+}
+
+void arrayDataTypeFn() {
+  User users[] = {
+      [0] = {"Alice", 20, .phone="17688887777"},
+      [1] = {"Bob", 25, .email="bob@email.com"},
+      [2] = {"Charlie", 30, .email = "charlie@email.com"},
+      [5] = {"Jack", 20, .email = "jack@email.com"},
+  };
+
+  for (size_t i = 0; i < (sizeof(users) / sizeof(User)); i++) {
+    User item = users[i];
+    printf("User %zu: Name: %s, Age: %d, connection: %s\n", i, item.name, item.age, findAddr(&item));
+  }
+
 }
 
 void operatorTypeFn() {
@@ -193,29 +223,70 @@ void operatorTypeFn() {
   printf(" 3 == 2 %d\n", 3 == 2);
   printf(" 3 != 2 %d\n", 3 != 2);
 
-  // Âß¼­ÔËËã·û£ºÇÒ »ò ·Ç
+  // é€»è¾‘è¿ç®—ç¬¦ï¼šä¸” æˆ– éž
   printf(" 3 && 2 %d\n", 3 && 2);
   printf(" 3 || 2 %d\n", 3 || 2);
   printf(" !3 %d\n", !3);
 
-  // °´Î»Óë¡¢°´Î»»ò¡¢°´Î»È¡·´¡¢ÒÆÎ»£º×óÒÆ¡¢ÓÒÒÆ
+  // æŒ‰ä½ä¸Žã€æŒ‰ä½æˆ–ã€æŒ‰ä½å–åã€ç§»ä½ï¼šå·¦ç§»ã€å³ç§»
   int bit_a = 0b0001;
   int bit_b = 0b0101;
 }
 
 void ioOperationFn() {
-  // ÊäÈëÊä³öÔËËã·û
+  // è¾“å…¥è¾“å‡ºè¿ç®—ç¬¦
   int a = 0;
 
-  printf("ÇëÊäÈëÒ»¸öÕûÊý£º");
+  printf("è¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°ï¼š");
   scanf("%d\n", &a);
-  printf("ÄãÊäÈëµÄÕûÊýÊÇ: %d\n", a);
+  printf("ä½ è¾“å…¥çš„æ•´æ•°æ˜¯: %d\n", a);
 
-  // Êä³ö×Ö·û´®
+  // è¾“å‡ºå­—ç¬¦ä¸²
   char str[100];
-  printf("ÇëÊäÈëÒ»¸ö×Ö·û´®: ");
+  printf("è¯·è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²: ");
   scanf("%s", str);
-  printf("ÄãÊäÈëµÄ×Ö·û´®ÊÇ: %s\n", str);
+  printf("ä½ è¾“å…¥çš„å­—ç¬¦ä¸²æ˜¯: %s\n", str);
+}
+
+void ioOperationFn2() {
+  int left;
+  int right;
+  char operator;
+
+  printf("è¯·è¾“å…¥ä¸€ä¸ªè¡¨è¾¾å¼ã€‚");
+  scanf("%d %c %d", &left, &operator, &right);
+  printf("ä½ è¾“å…¥çš„è¡¨è¾¾å¼æ˜¯: %d %c %d\n", left, operator, right);
+
+  int result;
+
+  switch (operator) {
+    case '+':result = left + right;
+      break;
+    case '-':result = left - right;
+      break;
+    case '*':result = left * right;
+      break;
+    case '/':
+      if (right != 0) {
+        result = left / right;
+      } else {
+        printf("é™¤æ•°ä¸èƒ½ä¸ºé›¶ï¼\n");
+        return;
+      }
+      break;
+    case '%':
+      if (right != 0) {
+        result = left % right;
+      } else {
+        printf("é™¤æ•°ä¸èƒ½ä¸ºé›¶ï¼\n");
+        return;
+      }
+      break;
+    default:printf("æ— æ•ˆçš„è¿ç®—ç¬¦ï¼\n");
+      return;
+  }
+  printf("ç»“æžœæ˜¯: %d\n", result);
+
 }
 
 int main() {
@@ -223,6 +294,8 @@ int main() {
 //  floatDataTypeFn();
 //  charDataTypeFn();
 //  constantTypeFn();
+  arrayDataTypeFn();
 //  operatorTypeFn();
-  ioOperationFn();
+//  ioOperationFn();
+//  ioOperationFn2();
 };

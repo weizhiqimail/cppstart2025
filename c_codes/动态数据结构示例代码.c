@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> // ÓÃÓÚ srand ºÍ rand
+#include <time.h> // ç”¨äº srand å’Œ rand
 
 struct weapon {
     int price;
@@ -8,7 +8,7 @@ struct weapon {
     struct weapon *next;
 };
 
-// ÊÍ·ÅÁ´±íÄÚ´æ
+// é‡Šæ”¾é“¾è¡¨å†…å­˜
 void free_list(struct weapon *head) {
     struct weapon *p = head;
     while (p != NULL) {
@@ -16,45 +16,45 @@ void free_list(struct weapon *head) {
         free(p);
         p = next;
     }
-    printf("Á´±íÄÚ´æÒÑÊÍ·Å¡£\n");
+    printf("é“¾è¡¨å†…å­˜å·²é‡Šæ”¾ã€‚\n");
 }
 
-// ´´½¨¶¯Ì¬Á´±í£¬½ÓÊÜ size ²ÎÊı×÷Îª malloc ·ÖÅäµÄ´óĞ¡
+// åˆ›å»ºåŠ¨æ€é“¾è¡¨ï¼Œæ¥å— size å‚æ•°ä½œä¸º malloc åˆ†é…çš„å¤§å°
 struct weapon *create(int size, int node_count) {
     struct weapon *head = NULL, *p1, *p2 = NULL;
     int n = 0;
 
-    // ¼ì²é size ÊÇ·ñ×ã¹»ÈİÄÉ struct weapon
+    // æ£€æŸ¥ size æ˜¯å¦è¶³å¤Ÿå®¹çº³ struct weapon
     if (size < sizeof(struct weapon)) {
-        printf("´íÎó£º·ÖÅä´óĞ¡ %d Ğ¡ÓÚ struct weapon ËùĞè %zu ×Ö½Ú\n", size, sizeof(struct weapon));
+        printf("é”™è¯¯ï¼šåˆ†é…å¤§å° %d å°äº struct weapon æ‰€éœ€ %zu å­—èŠ‚\n", size, sizeof(struct weapon));
         return NULL;
     }
 
-    // ³õÊ¼»¯Ëæ»úÊıÖÖ×Ó
+    // åˆå§‹åŒ–éšæœºæ•°ç§å­
     srand((unsigned) time(NULL));
 
-    // ´´½¨Ö¸¶¨ÊıÁ¿µÄ½Úµã
+    // åˆ›å»ºæŒ‡å®šæ•°é‡çš„èŠ‚ç‚¹
     for (int i = 0; i < node_count; i++) {
         p1 = (struct weapon *) malloc(size);
         if (!p1) {
-            printf("ÄÚ´æ·ÖÅäÊ§°Ü£¡\n");
-            free_list(head); // ÊÍ·ÅÒÑ·ÖÅäµÄ²¿·Ö
+            printf("å†…å­˜åˆ†é…å¤±è´¥ï¼\n");
+            free_list(head); // é‡Šæ”¾å·²åˆ†é…çš„éƒ¨åˆ†
             return NULL;
         }
 
-        // Ëæ»úÉú³É price ºÍ atk£¨·¶Î§Ê¾Àı£º1-1000£©
-        p1->price = rand() % 1000 + 1; // 1 µ½ 1000
+        // éšæœºç”Ÿæˆ price å’Œ atkï¼ˆèŒƒå›´ç¤ºä¾‹ï¼š1-1000ï¼‰
+        p1->price = rand() % 1000 + 1; // 1 åˆ° 1000
         p1->atk = rand() % 1000 + 1;
 
         if (n++ == 0) {
-            head = p1; // µÚÒ»¸ö½Úµã×÷ÎªÍ·
+            head = p1; // ç¬¬ä¸€ä¸ªèŠ‚ç‚¹ä½œä¸ºå¤´
         } else {
-            p2->next = p1; // Á´½Óµ½ÉÏÒ»¸ö½Úµã
+            p2->next = p1; // é“¾æ¥åˆ°ä¸Šä¸€ä¸ªèŠ‚ç‚¹
         }
-        p2 = p1; // ¸üĞÂÉÏÒ»¸ö½Úµã
+        p2 = p1; // æ›´æ–°ä¸Šä¸€ä¸ªèŠ‚ç‚¹
     }
 
-    // ÉèÖÃÁ´±íÎ²
+    // è®¾ç½®é“¾è¡¨å°¾
     if (p2) {
         p2->next = NULL;
     }
@@ -62,10 +62,10 @@ struct weapon *create(int size, int node_count) {
     return head;
 }
 
-// ´òÓ¡Á´±íÄÚÈİ
+// æ‰“å°é“¾è¡¨å†…å®¹
 void print_list(struct weapon *head) {
     struct weapon *p = head;
-    printf("Á´±íÄÚÈİ:\n");
+    printf("é“¾è¡¨å†…å®¹:\n");
     while (p != NULL) {
         printf("Price: %d, ATK: %d\n", p->price, p->atk);
         p = p->next;
@@ -75,16 +75,16 @@ void print_list(struct weapon *head) {
 
 int main() {
     struct weapon *p;
-    int alloc_size = sizeof(struct weapon); // ·ÖÅä´óĞ¡
-    int node_count = 5; // Éú³É 5 ¸ö½Úµã
+    int alloc_size = sizeof(struct weapon); // åˆ†é…å¤§å°
+    int node_count = 5; // ç”Ÿæˆ 5 ä¸ªèŠ‚ç‚¹
 
-    printf("Ê¹ÓÃ·ÖÅä´óĞ¡: %d ×Ö½Ú£¬Éú³É %d ¸ö½Úµã\n", alloc_size, node_count);
+    printf("ä½¿ç”¨åˆ†é…å¤§å°: %d å­—èŠ‚ï¼Œç”Ÿæˆ %d ä¸ªèŠ‚ç‚¹\n", alloc_size, node_count);
     p = create(alloc_size, node_count);
     if (p) {
         print_list(p);
         free_list(p);
     } else {
-        printf("Á´±í´´½¨Ê§°Ü¡£\n");
+        printf("é“¾è¡¨åˆ›å»ºå¤±è´¥ã€‚\n");
     }
 
     return 0;
