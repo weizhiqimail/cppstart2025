@@ -1,13 +1,6 @@
-cmake_minimum_required(VERSION 3.30)
-project(ccppstart2025)
+cmake_minimum_required(VERSION 3.31)
+project(cppstart2025)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ccppstart2025
-        main.cpp
-        CircleModule/Circle.cpp
-        CircleModule/Color.cpp
-        CircleModule/Point.cpp
-)
-
-include_directories(CircleModule)
+add_executable(cppstart2025 main.cpp)
